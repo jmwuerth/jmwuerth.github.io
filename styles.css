@@ -292,20 +292,3 @@ section {
 .stretched-link {
     color: white;
 }
-
-/* canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-main {
-    width: 100vw;
-    color: white;
-    z-index: auto;
-    position: absolute;
-    width: 100%;
-    margin: 0px auto;
-    padding: 100px 0px;
-    grid-template-columns: auto auto auto auto;
-} */
