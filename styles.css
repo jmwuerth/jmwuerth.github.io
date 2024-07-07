@@ -299,6 +299,7 @@ canvas {
     left: 0;
 }
 
+/*
 main {
     width: 100vw;
     color: white;
@@ -308,4 +309,4 @@ main {
     margin: 0px auto;
     padding: 100px 0px;
     grid-template-columns: auto auto auto auto;
-}
+} */
