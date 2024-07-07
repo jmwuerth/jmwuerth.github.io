@@ -1,58 +1,58 @@
 import './styles.css';
-import * as THREE from 'three';
+// import * as THREE from 'three';
 
-// Set up the objects in the scene
+// // Set up the objects in the scene
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight,  1, 1000);
-const renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('#background'),
-});
-renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.render(scene, camera);
+// const scene = new THREE.Scene();
+// const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight,  1, 1000);
+// const renderer = new THREE.WebGLRenderer({
+//     canvas: document.querySelector('#background'),
+// });
+// renderer.setPixelRatio(window.devicePixelRatio);
+// renderer.setSize(window.innerWidth, window.innerHeight);
+// renderer.render(scene, camera);
 
-// Donut
-const geometry = new THREE.TorusGeometry(5, 2, 32, 100)
-const material = new THREE.MeshStandardMaterial({ color: 0x33ff99 });
-const donut = new THREE.Mesh(geometry, material);
-scene.add(donut);
+// // Donut
+// const geometry = new THREE.TorusGeometry(5, 2, 32, 100)
+// const material = new THREE.MeshStandardMaterial({ color: 0x33ff99 });
+// const donut = new THREE.Mesh(geometry, material);
+// scene.add(donut);
 
-// Set up the light source
-const pointLight = new THREE.PointLight(0xffffff);
-const ambientLight = new THREE.AmbientLight(0xffffff);
-scene.add(pointLight, ambientLight);
+// // Set up the light source
+// const pointLight = new THREE.PointLight(0xffffff);
+// const ambientLight = new THREE.AmbientLight(0xffffff);
+// scene.add(pointLight, ambientLight);
 
-// Add 500 spheres in space to the scene
-function addSphere() {
-    const sphereGeometry = new THREE.SphereGeometry(0.2, 30, 30);
-    const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
-    const globe = new THREE.Mesh(sphereGeometry, material);
-    const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
-    globe.position.set(x, y, z);    // call the base class
-    scene.add(globe);
-}
-Array(500).fill().forEach(addSphere);
+// // Add 500 spheres in space to the scene
+// function addSphere() {
+//     const sphereGeometry = new THREE.SphereGeometry(0.2, 30, 30);
+//     const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+//     const globe = new THREE.Mesh(sphereGeometry, material);
+//     const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+//     globe.position.set(x, y, z);    // call the base class
+//     scene.add(globe);
+// }
+// Array(500).fill().forEach(addSphere);
 
 
-// Allow scrolling
-function scroll() {
-    const top = document.body.getBoundingClientRect().top;
-    camera.position.x = top * -0.0002;
-    camera.position.y = top * -0.0002;
-    camera.position.z = top * -0.02;
-}
-document.body.onscroll = scroll;
-scroll();
+// // Allow scrolling
+// function scroll() {
+//     const top = document.body.getBoundingClientRect().top;
+//     camera.position.x = top * -0.0002;
+//     camera.position.y = top * -0.0002;
+//     camera.position.z = top * -0.02;
+// }
+// document.body.onscroll = scroll;
+// scroll();
 
-function animate() {
-    requestAnimationFrame(animate);
-    donut.rotateX(0.01);
-    donut.rotateY(0.005);
-    donut.rotateZ(0.01);
-    renderer.render(scene, camera);
-}
-animate();
+// function animate() {
+//     requestAnimationFrame(animate);
+//     donut.rotateX(0.01);
+//     donut.rotateY(0.005);
+//     donut.rotateZ(0.01);
+//     renderer.render(scene, camera);
+// }
+// animate();
 
 
 
