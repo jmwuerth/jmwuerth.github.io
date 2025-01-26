@@ -17,7 +17,7 @@ renderer.render(scene, camera);
 const geometry = new THREE.TorusGeometry(5, 2, 32, 100)
 const material = new THREE.MeshStandardMaterial({ color: 0x33ff99 });
 const donut = new THREE.Mesh(geometry, material);
-scene.add(donut);
+// scene.add(donut);
 
 // Set up the light source
 const pointLight = new THREE.PointLight(0xffffff);
@@ -48,9 +48,9 @@ scroll();
 
 function animate() {
     requestAnimationFrame(animate);
-    donut.rotateX(0.01);
-    donut.rotateY(0.005);
-    donut.rotateZ(0.01);
+    // donut.rotateX(0.01);
+    // donut.rotateY(0.005);
+    // donut.rotateZ(0.01);
     renderer.render(scene, camera);
 }
 animate();
